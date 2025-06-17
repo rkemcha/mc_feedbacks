@@ -23,20 +23,6 @@
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
         }
-        @media (min-width: 1024px) {
-            .sticky-sidebar {
-                position: sticky;
-                top: 120px;
-                align-self: flex-start;
-            }
-        }
-        /* Fix for progress bar overlapping content */
-        #progress-container {
-            z-index: 40; /* Keep below navbar */
-        }
-        main {
-            padding-top: 10px; /* Add space between progress bar and content */
-        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans antialiased">
@@ -53,6 +39,7 @@
                 <a href="#outcomes" class="hover:text-indigo-200 transition">Outcomes</a>
                 <a href="#assessment" class="hover:text-indigo-200 transition">Assessment</a>
                 <a href="#resources" class="hover:text-indigo-200 transition">Resources</a>
+                <a href="#feedback" class="hover:text-indigo-200 transition">Feedback</a>
             </div>
             <button class="md:hidden focus:outline-none" id="mobile-menu-button">
                 <i class="fas fa-bars text-2xl"></i>
@@ -65,6 +52,7 @@
             <a href="#outcomes" class="block py-2 hover:text-indigo-200 transition">Outcomes</a>
             <a href="#assessment" class="block py-2 hover:text-indigo-200 transition">Assessment</a>
             <a href="#resources" class="block py-2 hover:text-indigo-200 transition">Resources</a>
+            <a href="#feedback" class="block py-2 hover:text-indigo-200 transition">Feedback</a>
         </div>
     </nav>
 
@@ -83,12 +71,12 @@
         </div>
     </header>
 
-    <!-- Progress indicator - Fixed the z-index issue -->
-    <div id="progress-container" class="bg-indigo-100 h-2 fixed top-16 left-0 right-0">
+    <!-- Progress indicator -->
+    <div class="bg-indigo-100 h-2 fixed top-16 left-0 right-0 z-40">
         <div class="bg-indigo-600 h-full progress-bar" id="progress-bar"></div>
     </div>
 
-    <!-- Main Content - Added padding-top to prevent overlap -->
+    <!-- Main Content -->
     <main class="container mx-auto px-4 py-12">
         <div class="flex flex-col lg:flex-row gap-8">
             <!-- Left Column (Course Content) -->
@@ -654,6 +642,7 @@
             </div> <!-- End of right column -->
         </div> <!-- End of flex container -->
     </main>
+
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
