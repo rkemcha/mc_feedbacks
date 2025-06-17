@@ -30,6 +30,13 @@
                 align-self: flex-start;
             }
         }
+        /* Fix for progress bar overlapping content */
+        #progress-container {
+            z-index: 40; /* Keep below navbar */
+        }
+        main {
+            padding-top: 10px; /* Add space between progress bar and content */
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans antialiased">
@@ -78,12 +85,12 @@
         </div>
     </header>
 
-    <!-- Progress indicator -->
-    <div class="bg-indigo-100 h-2 fixed top-16 left-0 right-0 z-40">
+    <!-- Progress indicator - Fixed the z-index issue -->
+    <div id="progress-container" class="bg-indigo-100 h-2 fixed top-16 left-0 right-0">
         <div class="bg-indigo-600 h-full progress-bar" id="progress-bar"></div>
     </div>
 
-    <!-- Main Content -->
+    <!-- Main Content - Added padding-top to prevent overlap -->
     <main class="container mx-auto px-4 py-12">
         <div class="flex flex-col lg:flex-row gap-8">
             <!-- Left Column (Course Content) -->
