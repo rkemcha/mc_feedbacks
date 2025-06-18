@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microcredential Specification</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        
+        /* Animation for section headers */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-section {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
+        /* Custom toggle for mobile menu */
+        #mobile-menu-toggle:checked ~ #mobile-menu {
+            display: block;
+        }
+        
+        /* Highlight current section in navigation */
+        .nav-item.active {
+            background-color: #e2e8f0;
+            border-left: 4px solid #3b82f6;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-indigo-700 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-certificate text-3xl"></i>
+                    <div>
+                        <h1 class="text-2xl font-bold">Microcredential Specification</h1>
+                        <p class="text-indigo-200">Advanced Data Analytics Certification</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-4">
+                    <a href="#" class="hover:text-indigo-200 transition">Home</a>
+                    <a href="#" class="hover:text-indigo-200 transition">About</a>
+                    <a href="#" class="hover:text-indigo-200 transition">Contact</a>
+                </div>
+                <label for="mobile-menu-toggle" class="md:hidden cursor-pointer">
+                    <i class="fas fa-bars text-2xl"></i>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <input type="checkbox" id="mobile-menu-toggle" class="hidden">
+    <div id="mobile-menu" class="hidden md:hidden bg-indigo-800 text-white py-4">
+        <div class="container mx-auto px-4 flex flex-col space-y-3">
+            <a href="#" class="hover:text-indigo-200 transition">Home</a>
+            <a href="#" class="hover:text-indigo-200 transition">About</a>
+            <a href="#" class="hover:text-indigo-200 transition">Contact</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8 flex flex-col lg:flex-row">
+        <!-- Sidebar Navigation -->
+        <aside class="w-full lg:w-1/4 xl:w-1/5 pr-0 lg:pr-8 mb-8 lg:mb-0">
+            <div class="bg-white rounded-lg shadow-md p-4 sticky top-8 overflow-y-auto max-h-screen">
+                <h2 class="text-lg font-semibold mb-4 text-indigo-700 border-b pb-2">Document Sections</h2>
+                <nav class="space-y-1">
+                    <a href="#overview" class="block px-3 py-2 rounded hover:bg-gray-100 transition nav-item">Overview</a>
+                    <a href="#learning-outcomes" class="block px-3 py-2 rounded hover:bg-gray-100 transition nav-item">Learning Outcomes</a>
+                    <a href="#assessment" class="block px-3 py-2 rounded hover:bg-gray-100 transition nav-item">Assessment Criteria</a>
+                    <a href="#delivery" class="block px-3 py-2 rounded hover:bg-gray-100 transition nav-item">Delivery Methods</a>
+                    <a href="#resources" class="block px-3 py-2 rounded hover:bg-gray-100 transition nav-item">Resources</a>
+                    <a href="#evaluation" class="block px-3 py-2 rounded hover:bg-gray-100 transition nav-item">Evaluation Form</a>
+                </nav>
+                
+                <div class="mt-6 pt-4 border-t">
+                    <div class="mt-2 space-y-1">
+                        <div class="flex flex-col sm:flex-row justify-center gap-4">
+                            <a href="#evaluation" class="bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-lg animate-bounce">
+                                Provide Feedback <i class="fas fa-comment-dots ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- Main Document Content -->
+        <main class="w-full lg:w-3/4 xl:w-4/5">
+            <!-- Overview Section -->
+            <section id="overview" class="bg-white rounded-lg shadow-md p-6 mb-8 animate-section">
+                <div class="flex items-center mb-4">
+                    <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-info-circle text-indigo-600 text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">Overview</h2>
+                </div>
+                
+                <div class="ml-16">
+                    <p class="text-gray-700 mb-4">
+                        This microcredential provides learners with advanced skills in data analytics, covering statistical analysis, 
+                        machine learning, and data visualization techniques. Upon completion, participants will be able to apply 
+                        these skills in real-world business scenarios.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <h3 class="font-semibold text-indigo-700 mb-2">Credential Value</h3>
+                            <p class="text-sm text-gray-600">3 ECTS credits</p>
+                        </div>
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <h3 class="font-semibold text-indigo-700 mb-2">Duration</h3>
+                            <p class="text-sm text-gray-600">8 weeks (60 hours)</p>
+                        </div>
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <h3 class="font-semibold text-indigo-700 mb-2">Level</h3>
+                            <p class="text-sm text-gray-600">EQF Level 6</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <h3 class="font-semibold text-gray-800 mb-2">Prerequisites</h3>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>Basic understanding of statistics</li>
+                            <li>Familiarity with programming concepts</li>
+                            <li>Experience with spreadsheet software</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Learning Outcomes Section -->
+            <section id="learning-outcomes" class="bg-white rounded-lg shadow-md p-6 mb-8 animate-section">
+                <div class="flex items-center mb-4">
+                    <div class="bg-green-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-graduation-cap text-green-600 text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">Learning Outcomes</h2>
+                </div>
+                
+                <div class="ml-16">
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Upon successful completion, learners will be able to:</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="h-2 w-2 bg-green-500 rounded-full"></div>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">
+                                        Apply advanced statistical methods to analyze complex datasets and draw meaningful conclusions.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="h-2 w-2 bg-green-500 rounded-full"></div>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">
+                                        Design and implement machine learning models to solve business problems.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="h-2 w-2 bg-green-500 rounded-full"></div>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">
+                                        Create effective data visualizations to communicate insights to stakeholders.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="h-2 w-2 bg-green-500 rounded-full"></div>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700">
+                                        Evaluate data quality and implement appropriate cleaning techniques.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <h3 class="font-semibold text-gray-800 mb-2">Alignment with Industry Standards</h3>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <p class="text-sm text-gray-700">
+                                This microcredential aligns with the <span class="font-semibold">Skills Framework for the Information Age (SFIA)</span> at level 4, specifically addressing the competencies in Data Analysis (DATAN) and Machine Learning (MLNG).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Assessment Criteria Section -->
+            <section id="assessment" class="bg-white rounded-lg shadow-md p-6 mb-8 animate-section">
+                <div class="flex items-center mb-4">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-clipboard-check text-blue-600 text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">Assessment Criteria</h2>
+                </div>
+                
+                <div class="ml-16">
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Assessment Components</h3>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Component</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Weighting</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Criteria</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Practical Project</td>
+                                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">50%</td>
+                                        <td class="px-4 py-4 text-sm text-gray-500">
+                                            <ul class="list-disc pl-5 space-y-1">
+                                                <li>Correct implementation of techniques</li>
+                                                <li>Quality of analysis</li>
+                                                <li>Effectiveness of visualization</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Written Exam</td>
+                                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">30%</td>
+                                        <td class="px-4 py-4 text-sm text-gray-500">
+                                            <ul class="list-disc pl-5 space-y-1">
+                                                <li>Understanding of concepts</li>
+                                                <li>Problem-solving approach</li>
+                                                <li>Accuracy of solutions</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Participation</td>
+                                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">20%</td>
+                                        <td class="px-4 py-4 text-sm text-gray-500">
+                                            <ul class="list-disc pl-5 space-y-1">
+                                                <li>Engagement in discussions</li>
+                                                <li>Completion of exercises</li>
+                                                <li>Peer feedback</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <h3 class="font-semibold text-gray-800 mb-2">Grading Scale</h3>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <p class="text-sm text-gray-700">
+                                <span class="font-semibold">Pass with Distinction:</span> 85-100% | 
+                                <span class="font-semibold">Pass with Merit:</span> 70-84% | 
+                                <span class="font-semibold">Pass:</span> 50-69% | 
+                                <span class="font-semibold">Fail:</span> Below 50%
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Delivery Methods Section -->
+            <section id="delivery" class="bg-white rounded-lg shadow-md p-6 mb-8 animate-section">
+                <div class="flex items-center mb-4">
+                    <div class="bg-purple-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-chalkboard-teacher text-purple-600 text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">Delivery Methods</h2>
+                </div>
+                
+                <div class="ml-16">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h3 class="font-semibold text-purple-700 mb-3 flex items-center">
+                                <i class="fas fa-laptop mr-2"></i> Online Learning
+                            </h3>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li>Interactive video lectures</li>
+                                <li>Live Q&A sessions (recorded for later viewing)</li>
+                                <li>Discussion forums</li>
+                                <li>Self-paced learning modules</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h3 class="font-semibold text-purple-700 mb-3 flex items-center">
+                                <i class="fas fa-users mr-2"></i> Practical Components
+                            </h3>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li>Hands-on coding exercises</li>
+                                <li>Case study analysis</li>
+                                <li>Group project work</li>
+                                <li>Virtual lab environment</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <h3 class="font-semibold text-gray-800 mb-2">Schedule Overview</h3>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium">Week 1-2: Foundations</span>
+                                <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Introductory</span>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium">Week 3-5: Core Techniques</span>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Intermediate</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium">Week 6-8: Advanced Applications</span>
+                                <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded-full">Advanced</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resources Section -->
+            <section id="resources" class="bg-white rounded-lg shadow-md p-6 mb-8 animate-section">
+                <div class="flex items-center mb-4">
+                    <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-book-open text-yellow-600 text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">Resources</h2>
+                </div>
+                
+                <div class="ml-16">
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Required Materials</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-book text-yellow-500"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700 font-medium">"Data Science for Business" by Foster Provost & Tom Fawcett</p>
+                                    <p class="text-sm text-gray-500">ISBN: 978-1449361327</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-laptop-code text-yellow-500"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-700 font-medium">Python for Data Analysis (Jupyter Notebook environment)</p>
+                                    <p class="text-sm text-gray-500">Provided through course platform</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <h3 class="font-semibold text-gray-800 mb-3">Recommended Resources</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <h4 class="font-medium text-yellow-700 mb-2">Online Courses</h4>
+                                <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700">
+                                    <li>DataCamp: Python for Data Science</li>
+                                    <li>Coursera: Applied Data Science</li>
+                                    <li>edX: Statistics and Data Science</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <h4 class="font-medium text-yellow-700 mb-2">Software Tools</h4>
+                                <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700">
+                                    <li>Tableau Public (free version)</li>
+                                    <li>Google Colab</li>
+                                    <li>Kaggle datasets</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Evaluation Form Section -->
+            <section id="evaluation" class="bg-white rounded-lg shadow-md p-6 animate-section">
+                <div class="flex items-center mb-4">
+                    <div class="bg-red-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-comment-alt text-red-600 text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">Evaluation Form</h2>
+                </div>
+                <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+                    <h3 class="font-semibold text-blue-800 mb-2">Privacy Notice</h3>
+                    <p class="text-sm text-gray-700">
+                        All responses are anonymous unless you choose to provide contact information. 
+                        The data collected will only be used for quality improvement purposes.
+                    </p>
+                </div>
+                     <!-- Google Form Embed -->
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfw0kFv73XFf-tH1hUBSK3g7XMAWr56kfuCh_4RH3ysY-tNEg/viewform?embedded=true" 
+                           width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0">
+                    </iframe>
+                     
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About This Microcredential</h3>
+                    <p class="text-gray-300 text-sm">
+                             </p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <address class="not-italic text-gray-300 text-sm">
+                        <p>Telematic Engineering Department</p>
+                        <p>Universidad Carlos III de Madrid</p>
+                        <p>rebiha.kemcha@uc3m.es</p>
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>© 2025 UC3M</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-indigo-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Highlight current section in navigation
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-item');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animation for sections as they come into view
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-section');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

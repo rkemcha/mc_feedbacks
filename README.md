@@ -1,2 +1,2 @@
 # mc_feedbacks
-MC Feedbacks
+Sharing Microcredential Specifications and Collecting Feedbacks on MAAS-MC (Multiple AI Agents System for MicroCredential design)

@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAAS-MC | AI-Powered Microcredential Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
+        }
+        .hero-pattern {
+            background-image: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 90%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .animated-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .animated-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: currentColor;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .animated-underline:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        .agent-icon {
+            transition: all 0.3s ease;
+        }
+        .agent-icon:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-robot text-purple-600 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-gray-900">MAAS<span class="text-purple-600">-MC</span></span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#features" class="animated-underline px-3 py-2 text-sm font-medium">Features</a>
+                    <a href="#how-it-works" class="animated-underline px-3 py-2 text-sm font-medium">How It Works</a>
+                    <a href="#pricing" class="animated-underline px-3 py-2 text-sm font-medium">Pricing</a>
+                    <a href="#testimonials" class="animated-underline px-3 py-2 text-sm font-medium">Testimonials</a>
+                    <a href="#contact" class="animated-underline px-3 py-2 text-sm font-medium">Contact</a>
+                </div>
+                <div class="flex items-center">
+                    <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Get Started</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#features" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Features</a>
+                <a href="#how-it-works" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">How It Works</a>
+                <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Pricing</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Testimonials</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="gradient-bg hero-pattern pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">
+                        Revolutionizing <span class="text-yellow-300">Microcredential</span> Design
+                    </h1>
+                    <p class="mt-4 text-xl text-white opacity-90">
+                        MAAS-MC leverages multiple AI agents to automate and optimize the creation of industry-relevant microcredentials.
+                    </p>
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#" class="bg-white text-purple-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium text-lg shadow-lg transition duration-300 transform hover:scale-105">
+                            Start Free Trial
+                        </a>
+                        <a href="#demo" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-purple-600 px-6 py-3 rounded-lg font-medium text-lg transition duration-300 transform hover:scale-105">
+                            Watch Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-12 md:mt-0">
+                    <div class="relative">
+                        <div class="absolute -top-6 -left-6 w-32 h-32 bg-yellow-300 rounded-full opacity-20 animate-pulse"></div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-purple-300 rounded-full opacity-20 animate-pulse"></div>
+                        <div class="relative bg-white rounded-xl shadow-2xl overflow-hidden">
+                            <div class="p-4 bg-gray-100 flex items-center">
+                                <div class="flex space-x-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                </div>
+                                <div class="ml-4 text-sm text-gray-600">MAAS-MC Dashboard</div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
+                                        <i class="fas fa-robot text-purple-600"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <div class="font-medium">Curriculum Agent</div>
+                                        <div class="text-sm text-gray-500">Analyzing industry trends...</div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <div class="flex">
+                                        <div class="flex-shrink-0">
+                                            <i class="fas fa-lightbulb text-yellow-500"></i>
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-sm text-gray-700">
+                                                Based on current data, I recommend adding blockchain fundamentals to your fintech microcredential. Demand has increased by 42% in Q2.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 flex space-x-2">
+                                    <div class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">#blockchain</div>
+                                    <div class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">#fintech</div>
+                                    <div class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">+42% demand</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trusted By Section -->
+    <div class="bg-gray-50 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-sm font-semibold uppercase text-gray-500 tracking-wider">
+                Trusted by leading institutions worldwide
+            </p>
+            <div class="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
+                <div class="col-span-1 flex justify-center items-center">
+                    <img class="h-12 opacity-60 hover:opacity-100 transition" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Harvard_University_logo.svg" alt="Harvard">
+                </div>
+                <div class="col-span-1 flex justify-center items-center">
+                    <img class="h-10 opacity-60 hover:opacity-100 transition" src="https://upload.wikimedia.org/wikipedia/commons/4/44/Stanford_University_wordmark_2005.svg" alt="Stanford">
+                </div>
+                <div class="col-span-1 flex justify-center items-center">
+                    <img class="h-10 opacity-60 hover:opacity-100 transition" src="https://upload.wikimedia.org/wikipedia/commons/7/7b/MIT_Logo.svg" alt="MIT">
+                </div>
+                <div class="col-span-1 flex justify-center items-center">
+                    <img class="h-12 opacity-60 hover:opacity-100 transition" src="https://upload.wikimedia.org/wikipedia/commons/7/7a/University_of_Toronto_logo.svg" alt="University of Toronto">
+                </div>
+                <div class="col-span-1 flex justify-center items-center">
+                    <img class="h-10 opacity-60 hover:opacity-100 transition" src="https://upload.wikimedia.org/wikipedia/commons/9/9f/University_of_Melbourne_coat_of_arms.svg" alt="University of Melbourne">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div id="features" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    AI-Powered Features
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Our specialized AI agents work together to deliver comprehensive microcredential solutions
+                </p>
+            </div>
+
+            <div class="mt-16">
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+                    <!-- Feature 1 -->
+                    <div class="card-hover bg-white rounded-xl shadow-md overflow-hidden p-6 transition duration-300">
+                        <div class="agent-icon w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-line text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900">Market Analysis Agent</h3>
+                        <p class="mt-2 text-gray-500">
+                            Continuously monitors industry trends and skill demands to ensure your microcredentials remain relevant.
+                        </p>
+                    </div>
+                    
+                    <!-- Feature 2 -->
+                    <div class="card-hover bg-white rounded-xl shadow-md overflow-hidden p-6 transition duration-300">
+                        <div class="agent-icon w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-book text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900">Curriculum Designer</h3>
+                        <p class="mt-2 text-gray-500">
+                            Automatically generates optimized learning pathways based on competency frameworks and learning outcomes.
+                        </p>
+                    </div>
+                    
+                    <!-- Feature 3 -->
+                    <div class="card-hover bg-white rounded-xl shadow-md overflow-hidden p-6 transition duration-300">
+                        <div class="agent-icon w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-graduation-cap text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900">Assessment Generator</h3>
+                        <p class="mt-2 text-gray-500">
+                            Creates valid, reliable assessments that accurately measure competency achievement with minimal bias.
+                        </p>
+                    </div>
+                    
+                    <!-- Feature 4 -->
+                    <div class="card-hover bg-white rounded-xl shadow-md overflow-hidden p-6 transition duration-300">
+                        <div class="agent-icon w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-certificate text-yellow-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900">Credential Validator</h3>
+                        <p class="mt-2 text-gray-500">
+                            Ensures your microcredentials meet accreditation standards and industry recognition requirements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works Section -->
+    <div id="how-it-works" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    How MAAS-MC Works
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    A seamless four-step process powered by our AI agent network
+                </p>
+            </div>
+
+            <div class="mt-16">
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div class="hidden md:block absolute top-0 left-1/2 h-full w-0.5 bg-gray-200 transform -translate-x-1/2"></div>
+                    
+                    <!-- Step 1 -->
+                    <div class="relative md:flex mb-16">
+                        <div class="md:w-1/2 md:pr-12 md:text-right">
+                            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 text-purple-600 mb-4">
+                                <span class="text-xl font-bold">1</span>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900">Define Your Goals</h3>
+                            <p class="mt-2 text-gray-500">
+                                Input your target industry, competency areas, and desired outcomes. Our system analyzes your requirements.
+                            </p>
+                        </div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="relative md:flex mb-16">
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <div class="md:w-1/2 md:pl-12">
+                            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 text-blue-600 mb-4">
+                                <span class="text-xl font-bold">2</span>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900">AI Agent Collaboration</h3>
+                            <p class="mt-2 text-gray-500">
+                                Our specialized agents work together to research, design, and validate your microcredential framework.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="relative md:flex mb-16">
+                        <div class="md:w-1/2 md:pr-12 md:text-right">
+                            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 mb-4">
+                                <span class="text-xl font-bold">3</span>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900">Review & Customize</h3>
+                            <p class="mt-2 text-gray-500">
+                                Receive a complete proposal with curriculum, assessments, and implementation plan. Make adjustments as needed.
+                            </p>
+                        </div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="relative md:flex">
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <div class="md:w-1/2 md:pl-12">
+                            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-yellow-100 text-yellow-600 mb-4">
+                                <span class="text-xl font-bold">4</span>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900">Launch & Monitor</h3>
+                            <p class="mt-2 text-gray-500">
+                                Deploy your microcredential program with continuous monitoring and updates from our AI agents.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Demo Video Section -->
+    <div id="demo" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:flex lg:items-center lg:justify-between">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        See MAAS-MC in Action
+                    </h2>
+                    <p class="mt-4 max-w-2xl text-xl text-gray-500">
+                        Watch our 2-minute demo to see how our AI agents collaborate to create perfect microcredentials.
+                    </p>
+                    <div class="mt-8">
+                        <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-purple-600 hover:bg-purple-700 transition duration-300">
+                            <i class="fas fa-play mr-2"></i> Watch Full Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-10 lg:mt-0 lg:w-1/2">
+                    <div class="relative aspect-w-16 aspect-h-9 rounded-xl shadow-xl overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center">
+                            <button class="w-20 h-20 rounded-full bg-white bg-opacity-90 flex items-center justify-center hover:bg-opacity-100 transition duration-300 transform hover:scale-110">
+                                <i class="fas fa-play text-purple-600 text-2xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div id="pricing" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Simple, Transparent Pricing
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Choose the plan that fits your institution's needs
+                </p>
+            </div>
+
+            <div class="mt-16 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
+                <!-- Basic Plan -->
+                <div class="card-hover relative p-8 bg-white border border-gray-200 rounded-2xl shadow-sm flex flex-col transition duration-300">
+                    <div class="flex-1">
+                        <h3 class="text-xl font-semibold text-gray-900">Starter</h3>
+                        <p class="mt-4 flex items-baseline text-gray-900">
+                            <span class="text-4xl font-extrabold tracking-tight">$99</span>
+                            <span class="ml-1 text-xl font-semibold">/month</span>
+                        </p>
+                        <p class="mt-4 text-gray-500">
+                            Perfect for small institutions or departments getting started with microcredentials.
+                        </p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-500">Up to 5 microcredentials</span>
+                            </li>
+                            <li class="flex">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-500">Basic market analysis</span>
+                            </li>
+                            <li class="flex">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-500">Curriculum design support</span>
+                            </li>
+                            <li class="flex">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-500">Email support</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" class="mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition duration-300">
+                        Get started
+                    </a>
+                </div>
+
+                <!-- Professional Plan -->
+                <div class="card-hover relative p-8 bg-white border-2 border-purple-500 rounded-2xl shadow-xl flex flex-col transition duration-300 transform scale-105">
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 px-4 py-1 bg-purple-600 text-white text-sm font-semibold rounded-full">
+                        Most popular
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-semibold text-gray-900">Professional</h3>
+                        <p class="mt-4 flex items-baseline text-gray-900">
+                            <span class="text-4xl font-extrabold tracking-tight">$299</span>
+                            <span class="ml-1 text-xl font-semibold">/month</span>
+                        </p>
+                        <p class="mt-4 text-gray-500">
+                            For institutions serious about scaling their microcredential programs.
+                        </p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-500">Up to 25 microcredentials</span>
+                            </li>
+                            <li class="flex">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-500">Advanced market analysis</span>
+                            </li>
+                            <li class="flex">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-500">Full curriculum design</span>
+                            </li>
+                            <li class="flex">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-500">Assessment generation</span>
+                            </li>
+                            <li class="flex">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-500">Priority support</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" class="mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium bg-purple-600 text-white hover:bg-purple-700 transition duration-300">
+                        Get started
+                    </a>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="card-hover relative p-8 bg-white border border-gray-200 rounded-2xl shadow-sm flex flex-col transition duration-300">
+                    <div class="flex-1">
+                        <h3 class="text-xl font-semibold text-gray-900">Enterprise</h3>
+                        <p class="mt-4 flex items-baseline text-gray-900">
+                            <span class="text-4xl font-extrabold tracking-tight">Custom</span>
+                        </p>
+                        <p class="mt-4 text-gray-500">
+                            For large institutions with complex microcredential needs.
+                        </p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-500">Unlimited microcredentials</span>
+                            </li>
+                            <li class="flex">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-500">Custom AI agent training</span>
+                            </li>
+                            <li class="flex">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-500">Full credential validation</span>
+                            </li>
+                            <li class="flex">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-500">API access</span>
+                            </li>
+                            <li class="flex">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-500">Dedicated account manager</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" class="mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition duration-300">
+                        Contact sales
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div id="testimonials" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    What Our Clients Say
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Hear from institutions that transformed their credentialing with MAAS-MC
+                </p>
+            </div>
+
+            <div class="mt-16">
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+                    <!-- Testimonial 1 -->
+                    <div class="card-hover bg-gray-50 rounded-xl p-8 transition duration-300">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                            </div>
+                            <div class="ml-4">
+                                <div class="text-lg font-medium text-gray-900">Dr. Sarah Johnson</div>
+                                <div class="text-purple-600">Director of Continuing Education, Stanford University</div>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <p class="text-gray-600 italic">
+                                "MAAS-MC reduced our microcredential development time by 70% while improving quality. The AI agents identified emerging skills we hadn't even considered."
+                            </p>
+                        </div>
+                        <div class="mt-6 flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="card-hover bg-gray-50 rounded-xl p-8 transition duration-300">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                            </div>
+                            <div class="ml-4">
+                                <div class="text-lg font-medium text-gray-900">Michael Chen</div>
+                                <div class="text-purple-600">VP of Academic Innovation, MIT</div>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <p class="text-gray-600 italic">
+                                "The assessment generator alone is worth the price. It creates perfectly aligned competency measurements that pass our rigorous validation standards."
+                            </p>
+                        </div>
+                        <div class="mt-6 flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="card-hover bg-gray-50 rounded-xl p-8 transition duration-300">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                            </div>
+                            <div class="ml-4">
+                                <div class="text-lg font-medium text-gray-900">Prof. James Wilson</div>
+                                <div class="text-purple-600">Dean of Professional Studies, University of Toronto</div>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <p class="text-gray-600 italic">
+                                "We've doubled our industry partnerships since using MAAS-MC. Employers trust that our microcredentials actually prepare students for real-world challenges."
+                            </p>
+                        </div>
+                        <div class="mt-6 flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="gradient-bg py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                    Ready to Transform Your Microcredential Programs?
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-white opacity-90 mx-auto">
+                    Join hundreds of leading institutions leveraging AI-powered microcredential design.
+                </p>
+                <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#" class="bg-white text-purple-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium text-lg shadow-lg transition duration-300 transform hover:scale-105">
+                        Start Free 14-Day Trial
+                    </a>
+                    <a href="#contact" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-purple-600 px-6 py-3 rounded-lg font-medium text-lg transition duration-300 transform hover:scale-105">
+                        Request Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8">
+                <div class="lg:col-span-1">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        Get in Touch
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-500">
+                        Have questions about MAAS-MC? Our team is here to help you understand how our AI agents can transform your credentialing process.
+                    </p>
+                    <div class="mt-8">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-envelope text-purple-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Email us</h3>
+                                <p class="mt-1 text-gray-500">support@maas-mc.ai</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-phone-alt text-purple-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Call us</h3>
+                                <p class="mt-1 text-gray-500">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-purple-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Visit us</h3>
+                                <p class="mt-1 text-gray-500">123 AI Innovation Blvd, San Francisco, CA 94107</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 lg:mt-0 lg:col-span-1">
+                    <div class="bg-white shadow-xl rounded-lg p-8">
+                        <h3 class="text-xl font-medium text-gray-900">Send us a message</h3>
+                        <form class="mt-6 space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                                <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                <input type="email" id="email" name="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+                            </div>
+                            <div>
+                                <label for="institution" class="block text-sm font-medium text-gray-700">Institution</label>
+                                <input type="text" id="institution" name="institution" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                                <textarea id="message" name="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-purple-500 focus:border-purple-500"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition duration-300">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center">
+                        <i class="fas fa-robot text-purple-400 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">MAAS<span class="text-purple-400">-MC</span></span>
+                    </div>
+                    <p class="mt-4 text-gray-400">
+                        The leading AI-powered platform for designing industry-relevant microcredentials with multiple specialized agents working in collaboration.
+                    </p>
+                    <div class="mt-6 flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Product</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Features</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">API</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Integrations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Resources</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Guides</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Webinars</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2023 MAAS-MC. All rights reserved.
+                </p>
+                <div class="mt-4 md:mt-0 flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
