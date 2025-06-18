@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microcredential Course Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .course-section {
+            scroll-margin-top: 100px;
+        }
+        .progress-bar {
+            transition: width 0.3s ease;
+        }
+        .feedback-form {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="bg-indigo-700 text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-graduation-cap text-2xl"></i>
+                <span class="text-xl font-bold">MicroCredential</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#overview" class="hover:text-indigo-200 transition">Overview</a>
+                <a href="#modules" class="hover:text-indigo-200 transition">Modules</a>
+                <a href="#outcomes" class="hover:text-indigo-200 transition">Outcomes</a>
+                <a href="#assessment" class="hover:text-indigo-200 transition">Assessment</a>
+                <a href="#resources" class="hover:text-indigo-200 transition">Resources</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-indigo-800 py-2 px-4" id="mobile-menu">
+            <a href="#overview" class="block py-2 hover:text-indigo-200 transition">Overview</a>
+            <a href="#modules" class="block py-2 hover:text-indigo-200 transition">Modules</a>
+            <a href="#outcomes" class="block py-2 hover:text-indigo-200 transition">Outcomes</a>
+            <a href="#assessment" class="block py-2 hover:text-indigo-200 transition">Assessment</a>
+            <a href="#resources" class="block py-2 hover:text-indigo-200 transition">Resources</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Digital Pedagogy Microcredential</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Empowering educators with digital teaching strategies for the 21st century classroom</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#feedback" class="bg-white text-indigo-700 font-bold py-3 px-6 rounded-lg hover:bg-indigo-100 transition duration-300 shadow-lg animate-bounce">
+                    Provide Feedback <i class="fas fa-comment-dots ml-2"></i>
+                </a>
+                <a href="#overview" class="bg-indigo-800 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-900 transition duration-300 shadow-lg">
+                    Explore Course <i class="fas fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Progress indicator -->
+    <div class="bg-indigo-100 h-2 fixed top-16 left-0 right-0 z-40">
+        <div class="bg-indigo-600 h-full progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Course Overview -->
+        <section id="overview" class="course-section mb-20">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
+                <div class="md:flex">
+                    <div class="md:w-1/3 bg-indigo-600 text-white p-8 flex flex-col justify-center">
+                        <h2 class="text-3xl font-bold mb-4">Course Overview</h2>
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-400 rounded-full p-2 mr-3">
+                                <i class="fas fa-clock text-white"></i>
+                            </div>
+                            <span>8 weeks | 40 hours</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-400 rounded-full p-2 mr-3">
+                                <i class="fas fa-certificate text-white"></i>
+                            </div>
+                            <span>3 graduate credits</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-indigo-400 rounded-full p-2 mr-3">
+                                <i class="fas fa-user-graduate text-white"></i>
+                            </div>
+                            <span>K-12 Educators</span>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 p-8">
+                        <h3 class="text-xl font-semibold text-indigo-700 mb-4">Course Description</h3>
+                        <p class="mb-4 text-gray-700">This microcredential provides educators with the knowledge and skills to effectively integrate digital technologies into their teaching practice. Participants will explore pedagogical approaches, digital tools, and assessment strategies that enhance student engagement and learning outcomes.</p>
+                        
+                        <h3 class="text-xl font-semibold text-indigo-700 mb-4 mt-6">Learning Objectives</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li>Analyze and apply digital pedagogical frameworks to teaching practice</li>
+                            <li>Design technology-enhanced learning experiences aligned with curriculum standards</li>
+                            <li>Evaluate digital tools for their educational value and appropriateness</li>
+                            <li>Develop strategies for digital citizenship and online safety</li>
+                            <li>Create assessments that measure digital learning outcomes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Course Modules -->
+        <section id="modules" class="course-section mb-20">
+            <h2 class="text-3xl font-bold text-indigo-800 mb-8 text-center">Course Modules</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Module 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="bg-indigo-600 text-white p-4">
+                        <h3 class="text-xl font-bold">Module 1: Foundations</h3>
+                        <p class="text-indigo-100">Week 1-2</p>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-semibold text-gray-800 mb-3">Topics Covered:</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>Digital pedagogy frameworks</li>
+                            <li>TPACK model</li>
+                            <li>SAMR model</li>
+                            <li>Digital literacy standards</li>
+                        </ul>
+                        <h4 class="font-semibold text-gray-800 mt-4 mb-3">Activities:</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>Self-assessment of digital skills</li>
+                            <li>Case study analysis</li>
+                            <li>Tool exploration journal</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Module 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="bg-purple-600 text-white p-4">
+                        <h3 class="text-xl font-bold">Module 2: Design</h3>
+                        <p class="text-purple-100">Week 3-4</p>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-semibold text-gray-800 mb-3">Topics Covered:</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>Universal Design for Learning</li>
+                            <li>Blended learning models</li>
+                            <li>Interactive content creation</li>
+                            <li>Accessibility considerations</li>
+                        </ul>
+                        <h4 class="font-semibold text-gray-800 mt-4 mb-3">Activities:</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>Lesson plan redesign</li>
+                            <li>Digital resource curation</li>
+                            <li>Peer feedback exchange</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Module 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="bg-teal-600 text-white p-4">
+                        <h3 class="text-xl font-bold">Module 3: Engagement</h3>
+                        <p class="text-teal-100">Week 5-6</p>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-semibold text-gray-800 mb-3">Topics Covered:</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>Student engagement strategies</li>
+                            <li>Gamification elements</li>
+                            <li>Collaborative online tools</li>
+                            <li>Discussion facilitation</li>
+                        </ul>
+                        <h4 class="font-semibold text-gray-800 mt-4 mb-3">Activities:</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>Interactive video creation</li>
+                            <li>Discussion board analysis</li>
+                            <li>Engagement strategy implementation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Module 4 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="bg-amber-600 text-white p-4">
+                        <h3 class="text-xl font-bold">Module 4: Assessment</h3>
+                        <p class="text-amber-100">Week 7</p>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-semibold text-gray-800 mb-3">Topics Covered:</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>Digital formative assessment</li>
+                            <li>Rubric design</li>
+                            <li>Data visualization</li>
+                            <li>Feedback strategies</li>
+                        </ul>
+                        <h4 class="font-semibold text-gray-800 mt-4 mb-3">Activities:</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>Digital quiz creation</li>
+                            <li>Rubric development</li>
+                            <li>Assessment portfolio</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Module 5 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="bg-rose-600 text-white p-4">
+                        <h3 class="text-xl font-bold">Module 5: Implementation</h3>
+                        <p class="text-rose-100">Week 8</p>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-semibold text-gray-800 mb-3">Topics Covered:</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>Digital citizenship</li>
+                            <li>Parent communication</li>
+                            <li>Professional learning networks</li>
+                            <li>Reflective practice</li>
+                        </ul>
+                        <h4 class="font-semibold text-gray-800 mt-4 mb-3">Activities:</h4>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                            <li>Digital citizenship lesson</li>
+                            <li>Professional growth plan</li>
+                            <li>Capstone project</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Outcomes -->
+        <section id="outcomes" class="course-section mb-20">
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <h2 class="text-3xl font-bold text-indigo-800 mb-8 text-center">Learning Outcomes</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-indigo-700 mb-4">Knowledge</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-3 mt-1">
+                                    <i class="fas fa-check text-indigo-600"></i>
+                                </div>
+                                <span class="text-gray-700">Understand key digital pedagogy frameworks and their application</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-3 mt-1">
+                                    <i class="fas fa-check text-indigo-600"></i>
+                                </div>
+                                <span class="text-gray-700">Identify appropriate digital tools for various learning objectives</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-3 mt-1">
+                                    <i class="fas fa-check text-indigo-600"></i>
+                                </div>
+                                <span class="text-gray-700">Recognize digital citizenship principles and online safety considerations</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-indigo-700 mb-4">Skills</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-3 mt-1">
+                                    <i class="fas fa-check text-indigo-600"></i>
+                                </div>
+                                <span class="text-gray-700">Design technology-enhanced learning experiences</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-3 mt-1">
+                                    <i class="fas fa-check text-indigo-600"></i>
+                                </div>
+                                <span class="text-gray-700">Facilitate engaging online discussions and collaborations</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-3 mt-1">
+                                    <i class="fas fa-check text-indigo-600"></i>
+                                </div>
+                                <span class="text-gray-700">Create and implement digital assessments</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-indigo-700 mb-4">Dispositions</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-3 mt-1">
+                                    <i class="fas fa-check text-indigo-600"></i>
+                                </div>
+                                <span class="text-gray-700">Value technology as a tool for enhancing learning</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-3 mt-1">
+                                    <i class="fas fa-check text-indigo-600"></i>
+                                </div>
+                                <span class="text-gray-700">Demonstrate commitment to continuous professional learning</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-3 mt-1">
+                                    <i class="fas fa-check text-indigo-600"></i>
+                                </div>
+                                <span class="text-gray-700">Advocate for equitable access to digital learning opportunities</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-indigo-700 mb-4">Applications</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-3 mt-1">
+                                    <i class="fas fa-check text-indigo-600"></i>
+                                </div>
+                                <span class="text-gray-700">Implement digital strategies in current teaching practice</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-3 mt-1">
+                                    <i class="fas fa-check text-indigo-600"></i>
+                                </div>
+                                <span class="text-gray-700">Share knowledge with colleagues through professional learning communities</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-3 mt-1">
+                                    <i class="fas fa-check text-indigo-600"></i>
+                                </div>
+                                <span class="text-gray-700">Reflect on and refine digital teaching practices</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Assessment -->
+        <section id="assessment" class="course-section mb-20">
+            <h2 class="text-3xl font-bold text-indigo-800 mb-8 text-center">Assessment & Certification</h2>
+            
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/3 bg-indigo-700 text-white p-8">
+                        <h3 class="text-2xl font-bold mb-4">Requirements</h3>
+                        <p class="mb-6">To earn the Digital Pedagogy Microcredential, participants must successfully complete all course requirements with an average of 80% or higher.</p>
+                        
+                        <div class="bg-indigo-800 rounded-lg p-4 mb-4">
+                            <h4 class="font-bold mb-2">Total Points: 100</h4>
+                            <div class="space-y-2">
+                                <div class="flex justify-between">
+                                    <span>Module Activities</span>
+                                    <span>60 pts</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Discussion Participation</span>
+                                    <span>20 pts</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Capstone Project</span>
+                                    <span>20 pts</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-2/3 p-8">
+                        <div class="mb-8">
+                            <h3 class="text-xl font-semibold text-indigo-700 mb-4">Capstone Project</h3>
+                            <p class="text-gray-700 mb-4">The culminating experience requires participants to design and implement a technology-enhanced learning unit in their classroom, documenting the process and reflecting on outcomes.</p>
+                            
+                            <h4 class="font-semibold text-gray-800 mb-2">Project Components:</h4>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li>Unit plan with digital integration</li>
+                                <li>Implementation artifacts (student work samples, screenshots, etc.)</li>
+                                <li>Reflection on student learning and personal growth</li>
+                                <li>Plan for future improvements</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-semibold text-indigo-700 mb-4">Evaluation Criteria</h3>
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full bg-white rounded-lg overflow-hidden">
+                                    <thead class="bg-gray-100">
+                                        <tr>
+                                            <th class="py-2 px-4 text-left">Criteria</th>
+                                            <th class="py-2 px-4 text-left">Excellent (4)</th>
+                                            <th class="py-2 px-4 text-left">Proficient (3)</th>
+                                            <th class="py-2 px-4 text-left">Developing (2)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-200">
+                                        <tr>
+                                            <td class="py-2 px-4">Pedagogical Soundness</td>
+                                            <td class="py-2 px-4">Clear alignment with learning theories</td>
+                                            <td class="py-2 px-4">Some theoretical basis evident</td>
+                                            <td class="py-2 px-4">Limited theoretical connection</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-4">Technology Integration</td>
+                                            <td class="py-2 px-4">Tools transform learning experience</td>
+                                            <td class="py-2 px-4">Tools enhance learning experience</td>
+                                            <td class="py-2 px-4">Tools substitute traditional methods</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-4">Assessment</td>
+                                            <td class="py-2 px-4">Comprehensive digital assessment plan</td>
+                                            <td class="py-2 px-4">Some digital assessment components</td>
+                                            <td class="py-2 px-4">Limited digital assessment</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources" class="course-section mb-20">
+            <h2 class="text-3xl font-bold text-indigo-800 mb-8 text-center">Resources & Support</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Technical Resources -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-indigo-600 text-white p-4">
+                        <h3 class="text-xl font-bold">Technical Resources</h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-laptop text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Learning Management System</h4>
+                                    <p class="text-sm text-gray-600">Access course materials and submit assignments</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-headset text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Tech Support</h4>
+                                    <p class="text-sm text-gray-600">24/7 assistance for platform issues</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-book text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Tool Tutorials</h4>
+                                    <p class="text-sm text-gray-600">Step-by-step guides for all required tools</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Academic Support -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-purple-600 text-white p-4">
+                        <h3 class="text-xl font-bold">Academic Support</h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="bg-purple-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-user-graduate text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Instructor Office Hours</h4>
+                                    <p class="text-sm text-gray-600">Weekly virtual meetings for Q&A</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-purple-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-users text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Peer Learning Groups</h4>
+                                    <p class="text-sm text-gray-600">Collaborate with fellow participants</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-purple-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-comments text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Discussion Forums</h4>
+                                    <p class="text-sm text-gray-600">Asynchronous academic discussions</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Additional Resources -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-teal-600 text-white p-4">
+                        <h3 class="text-xl font-bold">Additional Resources</h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="bg-teal-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-book-open text-teal-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Digital Library</h4>
+                                    <p class="text-sm text-gray-600">Curated collection of articles and books</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-teal-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-podcast text-teal-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Webinar Archive</h4>
+                                    <p class="text-sm text-gray-600">Recorded expert presentations</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-teal-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-tools text-teal-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Tool Database</h4>
+                                    <p class="text-sm text-gray-600">Searchable directory of edtech tools</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feedback Form -->
+        <section id="feedback" class="course-section mb-20">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfw0kFv73XFf-tH1hUBSK3g7XMAWr56kfuCh_4RH3ysY-tNEg/viewform?embedded=true" 
+            width="100%" height="2831" frameborder="0" marginheight="0" marginwidth="0">
+            </iframe>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">MicroCredential</h3>
+                    <p class="text-gray-400">Empowering educators with digital teaching strategies for the 21st century classroom.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#overview" class="text-gray-400 hover:text-white transition">Course Overview</a></li>
+                        <li><a href="#modules" class="text-gray-400 hover:text-white transition">Modules</a></li>
+                        <li><a href="#outcomes" class="text-gray-400 hover:text-white transition">Learning Outcomes</a></li>
+                        <li><a href="#assessment" class="text-gray-400 hover:text-white transition">Assessment</a></li>
+                        <li><a href="#resources" class="text-gray-400 hover:text-white transition">Resources</a></li>
+                        <li><a href="#feedback" class="text-gray-400 hover:text-white transition">Feedback</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>123 Education Way, Learning City, LC 12345</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3"></i>
+                            <span>(123) 456-7890</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3"></i>
+                            <span>info@microcredential.edu</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 MicroCredential Program. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-indigo-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-indigo-700">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+            
+            // Update progress bar
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Form submission handling
+        const feedbackForm = document.getElementById('course-feedback-form');
+        if (feedbackForm) {
+            feedbackForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // In a real implementation, this would submit to Formspree or another service
+                // For demo purposes, we'll just show a success message
+                alert('Thank you for your feedback! Your responses have been submitted.');
+                this.reset();
+                
+                // Scroll to top
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    </script>
+</body>
+</html>
