@@ -1,0 +1,49 @@
+{
+    "123": {
+        "title": "Lab session with microrobots",
+        "description": "This micro-credential is designed for advanced learners in Robotics, focusing on practical experience with microrobots, specifically the Epuck2, programmed in Python and MicroPython.",
+        "overview": {
+            "duration": "75 hours",
+            "credits": "3 ECTS",
+            "targetAudience": "Advanced learners in Robotics",
+            "learningObjectives": [
+                "Understand the fundamental concepts and operational principles of microrobots, particularly the Epuck2.",
+                "Acquire proficiency in programming microrobots using Python and MicroPython.",
+                "Apply theoretical knowledge to design and implement practical control strategies for microrobots in a lab environment."
+            ]
+        },
+        "modules": [
+            {
+                "name": "Module 1: Introducción a los mini-robots",
+                "duration": "Weeks 1-2",
+                "topics": ["Types and architectures of microrobots", "Sensors and actuators in microrobots", "Introduction to Epuck2 robot hardware and capabilities"],
+                "activities": ["Theoretical lessons", "Hardware exploration"]
+            }
+        ],
+        "learningOutcomes": {
+            "knowledge": ["Understand key concepts of microrobotics", "Recognize AI/ML applications in robotics"],
+            "skills": ["Program Epuck2 microrobots", "Implement collaborative robotic tasks"],
+            "dispositions": ["Value practical experimentation", "Appreciate collaborative robotics"],
+            "applications": ["Apply skills in lab settings", "Design human-robot interaction tasks"]
+        },
+        "assessment": {
+            "requirements": "Participants must complete all assessments with a passing grade.",
+            "pointsDistribution": {
+                "Evaluación Continua": "40%",
+                "Examen Final": "60%"
+            },
+            "capstoneProject": {
+                "description": "A final project demonstrating microrobot programming and collaborative tasks.",
+                "components": ["Project plan", "Implementation", "Presentation"]
+            },
+            "evaluationCriteria": [
+                {
+                    "criteria": "Programming Skill",
+                    "excellent": "Flawless code execution",
+                    "proficient": "Minor errors corrected",
+                    "developing": "Significant errors present"
+                }
+            ]
+        }
+    }
+}
