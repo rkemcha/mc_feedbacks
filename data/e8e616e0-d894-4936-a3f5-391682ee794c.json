@@ -1,0 +1,196 @@
+{
+    "id": "e8e616e0-d894-4936-a3f5-391682ee794c",
+    "name": "Administration of Linux Systems",
+    "issuing_university": "Universidad Carlos III de Madrid",
+    "entity": "Universidad Carlos III de Madrid, Department of Computer Science",
+    "language": "English",
+    "start_date": "<Start Date>",
+    "end_date": "<End Date>",
+    "admission_requirements": [
+      "Basic understanding of computer systems and networking",
+      "Familiarity with command-line interfaces"
+    ],
+    "learning_objectives": [
+      "Master fundamental Linux administration skills",
+      "Configure and maintain Linux servers",
+      "Implement security measures to protect Linux systems, including cloud environments",
+      "Automate tasks using shell scripting",
+      "Automate tasks using Python scripting",
+      "Troubleshoot common Linux system issues",
+      "Understand emerging trends in Linux administration, including cloud computing and security best practices"
+    ],
+    "content_description": [
+      {
+        "module": "Linux Fundamentals",
+        "hours": 10,
+        "sub_modules": [
+          {
+            "name": "Introduction to Linux",
+            "hours": 2,
+            "time_allocation": "Lecture (1 hour), Reading (0.5 hours), Quiz (0.5 hours)",
+            "learning_activity": "Reading assignments, online quizzes"
+          },
+          {
+            "name": "Command-Line Interface (CLI)",
+            "hours": 4,
+            "time_allocation": "Lecture (1 hour), Practical Exercise (2 hours), Review (1 hour)",
+            "learning_activity": "Hands-on exercises to master essential CLI commands"
+          },
+          {
+            "name": "File System and Permissions",
+            "hours": 4,
+            "time_allocation": "Lecture (1 hour), Practical Exercise (2 hours), Review (1 hour)",
+            "learning_activity": "Hands-on exercises to understand file system hierarchy and manage permissions"
+          }
+        ]
+      },
+      {
+        "module": "System Administration",
+        "hours": 20,
+        "sub_modules": [
+          {
+            "name": "User and Group Management",
+            "hours": 5,
+            "time_allocation": "Lecture (1 hour), Hands-on Lab (3 hours), Review (1 hour)",
+            "learning_activity": "Hands-on lab to create and manage users and groups"
+          },
+          {
+            "name": "Package Management",
+            "hours": 5,
+            "time_allocation": "Lecture (1 hour), Hands-on Lab (3 hours), Review (1 hour)",
+            "learning_activity": "Hands-on lab to install, update, and remove software packages"
+          },
+          {
+            "name": "Networking",
+            "hours": 5,
+            "time_allocation": "Lecture (1 hour), Hands-on Lab (3 hours), Review (1 hour)",
+            "learning_activity": "Hands-on lab to configure network interfaces and troubleshoot connectivity issues"
+          },
+          {
+            "name": "System Monitoring",
+            "hours": 5,
+            "time_allocation": "Lecture (1 hour), Hands-on Lab (3 hours), Review (1 hour)",
+            "learning_activity": "Hands-on lab to monitor system resources and identify performance bottlenecks"
+          }
+        ]
+      },
+      {
+        "module": "Security and Automation",
+        "hours": 25,
+        "sub_modules": [
+          {
+            "name": "Linux Security Fundamentals",
+            "hours": 10,
+            "time_allocation": "Lecture (2 hours), Hands-on Lab (6 hours), Review (2 hours)",
+            "learning_activity": "Hands-on lab configuring firewalls, intrusion detection systems, and security auditing tools"
+          },
+          {
+            "name": "Shell Scripting",
+            "hours": 7.5,
+            "time_allocation": "Lecture (1.5 hours), Hands-on Lab (4.5 hours), Project (1.5 hours)",
+            "learning_activity": "Project-based assignment to automate system administration tasks using shell scripts"
+          },
+          {
+            "name": "Python Scripting for Automation",
+            "hours": 7.5,
+            "time_allocation": "Lecture (1.5 hours), Hands-on Lab (4.5 hours), Project (1.5 hours)",
+            "learning_activity": "Project-based assignment to automate system administration tasks using Python scripts"
+          }
+        ]
+      },
+      {
+        "module": "Cloud Computing with Linux",
+        "hours": 15,
+        "sub_modules": [
+          {
+            "name": "Introduction to Cloud Computing",
+            "hours": 5,
+            "time_allocation": "Lecture (1 hour), Hands-on Lab (3 hours), Review (1 hour)",
+            "learning_activity": "Hands-on lab to deploy and manage Linux instances on AWS, Azure, or GCP"
+          },
+          {
+            "name": "Securing Linux in the Cloud",
+            "hours": 5,
+            "time_allocation": "Lecture (1 hour), Hands-on Lab (3 hours), Review (1 hour)",
+            "learning_activity": "Hands-on lab to configure security groups, IAM roles, and other cloud security features"
+          },
+          {
+            "name": "Automation in the Cloud",
+            "hours": 5,
+            "time_allocation": "Lecture (1 hour), Hands-on Lab (3 hours), Review (1 hour)",
+            "learning_activity": "Hands-on lab using cloud-specific automation tools"
+          }
+        ]
+      }
+    ],
+    "mode_of_instruction": "Online lectures and hands-on lab sessions",
+    "learning_outcomes": [
+      "Ability to administer Linux systems effectively",
+      "Proficiency in using the command-line interface",
+      "Understanding of Linux security principles, including cloud security",
+      "Ability to automate tasks using shell scripting",
+      "Ability to automate tasks using Python scripting",
+      "Ability to deploy and manage Linux systems in cloud environments"
+    ],
+    "level_of_experience": "Beginner to Intermediate (EQF Level 5)",
+    "competency_frameworks": ["ESCO", "DIGCOMP"],
+    "learning_activities": [
+      "Online lectures and discussions",
+      "Hands-on lab sessions using virtual machines and cloud platforms",
+      "Project-based assignments (e.g., setting up a web server, configuring a firewall, automating system updates with shell/python scripts)"
+    ],
+    "workload_theoretical": 45,
+    "workload_practical": 45,
+    "assessment_methods": {
+      "quizzes": "20%",
+      "lab_assignments": "50%",
+      "final_exam": "30%"
+    },
+    "trainers": [
+      "[Trainer Name], PhD in Computer Science, specialization in Systems Administration",
+      "[Trainer Name], MSc in Computer Science, expertise in Linux Security"
+    ],
+    "stackability_options": "This micro-credential can be stacked towards a Bachelor's degree in Computer Science or a related field at Universidad Carlos III de Madrid",
+    "outcome_for_student": "Micro-credential certificate upon successful completion",
+    "quality_assurance": "Internal review by the academic committee of the Department of Computer Science at Universidad Carlos III de Madrid",
+    "certifying_university": "Universidad Carlos III de Madrid",
+    "date_of_issue": "<Date>",
+    "esco_skills": [
+      {
+        "skill": "Linux",
+        "uri": "http://data.europa.eu/esco/skill/1463b09f-2c83-4cc7-a877-f0962f4391bb&language=en"
+      },
+      {
+        "skill": "System administration",
+        "uri": "http://data.europa.eu/esco/skill/5a19e654-344b-4737-91c2-a68f5c2a91d7&language=en"
+      },
+      {
+        "skill": "Shell scripting",
+        "uri": "http://data.europa.eu/esco/skill/b919a987-919c-496f-b95b-b663a08e159c&language=en"
+      },
+      {
+        "skill": "Python",
+        "uri": "http://data.europa.eu/esco/skill/af9d2bb4-5964-46cb-b6b9-c09997b07032&language=en"
+      },
+      {
+        "skill": "Computer security",
+        "uri": "http://data.europa.eu/esco/skill/be168b33-b0e3-45a3-ad65-3a6b5c88db14&language=en"
+      },
+      {
+        "skill": "Network security",
+        "uri": "http://data.europa.eu/esco/skill/4a4a89bb-237e-4db1-960d-3302953c139c&language=en"
+      },
+      {
+        "skill": "Automate repetitive tasks",
+        "uri": "http://data.europa.eu/esco/skill/05349510-8b92-44dd-af22-3e5fde60125f&language=en"
+      },
+      {
+        "skill": "Cloud computing",
+        "uri": "http://data.europa.eu/esco/skill/c8a80399-9a7a-4c4b-a20b-c811e0f1773b&language=en"
+      },
+      {
+        "skill": "Virtualisation",
+        "uri": "http://data.europa.eu/esco/skill/03e5c629-4983-459e-941c-20940a9cc04a&language=en"
+      }
+    ]
+  }
